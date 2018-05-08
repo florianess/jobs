@@ -1,0 +1,37 @@
+<mat-grid-list cols="2" rowHeight="100px">
+  <mat-grid-tile
+      [colspan]=2
+      [rowspan]=1>
+    <h1 class="mat-display-1">Calculator Weedogift</h1>
+  </mat-grid-tile>
+  <mat-grid-tile
+      [colspan]=1
+      [rowspan]=2>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Montant" type="number" [(ngModel)]="value">
+        <span matSuffix>€</span>
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile
+      [colspan]=1
+      [rowspan]=1>
+       <button mat-fab (click)="plus()" disabled={{!showPlus}}>+</button>
+  </mat-grid-tile>
+  <mat-grid-tile
+      [colspan]=1
+      [rowspan]=1>
+       <button mat-fab (click)="minus()" disabled={{!showMinus}}>-</button>
+  </mat-grid-tile>
+  <mat-grid-tile
+      [colspan]=2
+      [rowspan]=1>
+      <button (click)="onClick()" mat-raised-button color="primary">Valider</button>
+  </mat-grid-tile>
+  <mat-grid-tile
+      [colspan]=2
+      [rowspan]=1>
+      <p class="mat-typography" style="white-space: pre;">
+        {{result}}
+      </p>
+  </mat-grid-tile>
+</mat-grid-list>
